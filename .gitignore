@@ -2,7 +2,7 @@
 .env
 /frontend/node_modules/
 /backend/node_modules/
-/vercel/node_modules/
+/vercel_conf/node_modules/
 /project_info/
 
 # Temporary folders
@@ -17,11 +17,3 @@ logs
 .DS_Store
 .DS_Store?
 ._*
-
-# Supabase
-.branches
-.temp
-.vercel
-
-# Database
-*.db
