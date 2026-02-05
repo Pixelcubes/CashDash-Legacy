@@ -12,11 +12,12 @@ const bodyParser = require("body-parser");
 
 // import routes (endpoints)
 const registerRoute = require("./endpoints/register.endpoint.js");
+const loginRoute = require("./endpoints/login.endpoint.js");
 
 // import supabase API
 const { createClient } = require("@supabase/supabase-js");
 const supabaseUrl = 'https://bpjmdrzhirsebupwxgbp.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.use(cors());
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 
 // use routes (endpoints)
 app.use(registerRoute);
+app.use(loginRoute);
 
 app.get("/test/:uuid", async (request, response) => {
     const uuid = request.params.uuid;

@@ -16,26 +16,28 @@
 <body>
     <div id="nav-bar">
         <div class="nav-logo">
-            <img src="assets/MockLogo.png" alt="CashDash Logo">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                <img src="assets/MockLogo.png" alt="CashDash Logo">
+            </a>
         </div>
         <div id="nav-bar-content">
             <div id="links">
-                <button class="link1">
-                    lorem ipsum
+                <button class="link1" onclick="window.location.href='index.html'">
+                    Home
                 </button>
-                <button class="link2">
-                    lorem ipsum
+                <button class="link2" onclick="window.location.href='dashboard.html'">
+                    Dashboard
                 </button>
-                <button class="link3">
-                    lorem
+                <button class="link3" onclick="alert('Coming soon!')">
+                    About
                 </button>
             </div>
             <hr>
             <div id="auth-box">
-                <button class="login">
+                <button class="login" onclick="window.location.href='login.html'">
                     Login
                 </button>
-                <button class="register">
+                <button class="register" onclick="window.location.href='register.html'">
                     Register
                 </button>
             </div>

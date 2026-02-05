@@ -23,11 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
             await serverResponsePromise.json().then(function (serverResponse) {
                 responseText.innerHTML = serverResponse["message"];
                 responseText.style.color = serverResponsePromise["status"] == "200" ? "green" : "red";
+                
+                // Redirect to login page on successful registration
+                if (serverResponsePromise.status === 200) {
+                    setTimeout(() => {
+                        window.location.href = "login.html";
+                    }, 1500);
+                }
             }).catch((error) => {
                 responseText.innerHTML = "Error! Please try again.";
+                responseText.style.color = "red";
             });
         }).catch((error) => {
             responseText.innerHTML = "Error! Please try again.";
+            responseText.style.color = "red";
         });
     });
 });
