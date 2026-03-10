@@ -8,7 +8,13 @@ node_modules/
 /frontend/node_modules/
 /backend/node_modules/
 /vercel_conf/node_modules/
+
+# Source/development folders (not deployed)
+/frontend/
+/backend/
+/vercel_conf/
 /project_info/
+/public/
 
 # Vercel
 .vercel
