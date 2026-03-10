@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const responseText = document.querySelector("#response-msg");
 
-        await fetch("http://localhost:5501/register", {
+        await fetch("/api/register", {
             "method": "POST", // http request type
             "headers": { // tells server data in is JSON
                 'Content-Type': 'application/json',
