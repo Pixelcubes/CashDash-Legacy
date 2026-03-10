@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const continueBtn = document.querySelector("#continueBtn");
 
     continueBtn.addEventListener("click", async (clickEventDetails) => {
+        clickEventDetails.preventDefault(); // Prevent form submission/page reload
+        
         const usernameInput = document.querySelector("#usernameInput");
         const passwordInput = document.querySelector("#passwordInput");
 
@@ -38,5 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
             responseText.innerHTML = "Error! Please try again.";
             responseText.style.color = "red";
         });
+    });
+
+    // Allow Enter key to submit
+    const passwordInput = document.querySelector("#passwordInput");
+    passwordInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            continueBtn.click();
+        }
     });
 });

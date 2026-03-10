@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     loginBtn.parentNode.appendChild(responseMsg);
 
     loginBtn.addEventListener("click", async (clickEvent) => {
+        clickEvent.preventDefault(); // Prevent form submission/page reload
+        
         try {
             const response = await fetch("/api/login", {
                 "method": "POST",
@@ -49,6 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
             responseMsg.style.color = "red";
             responseMsg.textContent = "Error connecting to server. Please make sure the backend is running.";
             console.log("Error: " + error);
+        }
+    });
+
+    // Allow Enter key to submit
+    passwordInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            loginBtn.click();
         }
     });
 });
