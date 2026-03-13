@@ -37,23 +37,29 @@ This project is configured for deployment on Vercel with serverless functions.
 ### Project Structure
 ```
 CashDash/
-├── api/                    # Serverless API functions
-│   ├── login.js           # Login endpoint
-│   └── register.js        # Register endpoint
-├── public/                # Static frontend files
-│   ├── index.html         # Landing page
+├── frontend/                # Public-facing frontend files
+│   ├── index.html
 │   ├── login.html
 │   ├── register.html
 │   ├── dashboard.html
 │   ├── css/
 │   ├── js/
 │   └── assets/
-├── backend/               # Original Express server (for local dev)
-├── vercel.json           # Vercel configuration
-├── package.json          # Dependencies
-└── .env.example          # Environment variable template
+├── api/                     # Vercel serverless API functions
+│   ├── login.js
+│   ├── register.js
+│   └── test.js
+├── backend/                 # Optional local Express backend (legacy/local use)
+├── vercel.json              # Vercel function runtime config
+├── package.json             # Root runtime dependencies
+└── .env.example             # Environment variable template
 
 ```
+
+### Deployment Root
+- Vercel project root should be repository root (`/`).
+- `vercel.json` rewrites public URLs (`/`, `/login.html`, `/css/*`, `/js/*`) to files under `frontend/`.
+- Keep API functions in root `api/` so `/api/*` remains serverless.
 
 ### Local Development
 
